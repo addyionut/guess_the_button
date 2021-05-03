@@ -10,33 +10,23 @@
     <h1>GUESS THE BUTTON</h1>
      <p id="demo"></p>
       <p>
-        <button id="button1" class = "button" onclick="pressButton()">Button1</button>
-        <button id="button2" class = "button" onclick="pressButton()">Button2</button>
-        <button id="button3" class = "button" onclick="pressButton()">Button3</button>
+        <button id="1" class = "button" onclick="pressButton(id)">Button1</button>
+        <button id="2" class = "button" onclick="pressButton(id)">Button2</button>
+        <button id="3" class = "button" onclick="pressButton(id)">Button3</button>
       </p>
+      <div class = "reloadButton">
+        <button onclick = location.reload()>Reload</button>
+      </div>
       <script>
-        document.getElementById("button1").onclick = function() {
-          document.getElementById("demo").innerHTML = "Congratulations! You got it right!";
-        };
-        document.getElementById("button2").onclick = function() {
-          document.getElementById("demo").innerHTML = "Wrong button";
-        };
-        document.getElementById("button3").onclick = function() {
-          document.getElementById("demo").innerHTML = "Wrong button";
-        };
+        function pressButton(id) {
+          var randomButton = Math.ceil(Math.random() * 3);
+          if (randomButton == id) {
+            document.getElementById("demo").innerHTML = "Congratulations! You got it right";
+          }
+          else {
+            document.getElementById("demo").innerHTML = "Wrong button";
+          }
+        }
       </script>
     </body>
 </html>
-
-
-<!--
-function GetValue()
-{
-    var myarray= new Array("item1","item2","item3");
-    var random = myarray[Math.floor(Math.random() * myarray.length)];
-   document.getElementById("message").innerHTML=random;
-}
-
-<input type="button" id="btnSearch" value="Search" onclick="GetValue();" />
-<p id="message" >ddd</p>
--->
